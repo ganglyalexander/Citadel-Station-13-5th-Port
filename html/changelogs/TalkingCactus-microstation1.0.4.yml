@@ -1,0 +1,19 @@
+# Valid Prefixes: 
+#   bugfix
+#   wip (For works in progress)
+#   tweak
+#   soundadd
+#   sounddel
+#   rscadd (general adding of nice things)
+#   rscdel (general deleting of nice things)
+#   imageadd
+#   imagedel
+#   spellcheck (typo fixes)
+#   experiment
+author: TalkingCactus
+
+delete-after: True
+
+changes: 
+  - rscadd: "Micro Station: Added a restroom to the space bar."
+  - rscadd: "Micro Station: Added an observation port to the dormitory maintenance tunnel."
