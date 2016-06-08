@@ -17,3 +17,4 @@ delete-after: True
 changes: 
   - rscadd: "Micro Station: Added a restroom to the space bar."
   - rscadd: "Micro Station: Added an observation port to the dormitory maintenance tunnel."
+  - rscadd: "Micro Station: Moved the space bar farther from the station."
