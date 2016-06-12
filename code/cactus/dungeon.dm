@@ -37,5 +37,6 @@
 
 /turf/indestructible/bedrock
 	name = "bedrock"
+	desc = "This looks too tough to dig through."
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
