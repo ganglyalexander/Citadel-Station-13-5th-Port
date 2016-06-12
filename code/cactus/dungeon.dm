@@ -34,3 +34,8 @@
 /turf/indestructible/dungeon/plasma
 
 /turf/indestructible/dungeon/diamond
+
+/turf/indestructible/dungeon/bedrock
+	name = "bedrock"
+	icon = 'icons/turf/mining.dmi'
+	icon_state = "rock"
