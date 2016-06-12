@@ -34,5 +34,3 @@
 /turf/indestructible/dungeon/plasma
 
 /turf/indestructible/dungeon/diamond
-
-
