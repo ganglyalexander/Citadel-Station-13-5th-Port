@@ -20,6 +20,12 @@
 	canSmoothWith = list(/turf/indestructible/dungeon)
 	smooth = SMOOTH_TRUE
 
+/turf/indestructible/dungeon/New()
+	..()
+	if(smooth)
+		smooth_icon(src)
+		icon_state = ""
+
 /turf/indestructible/dungeon/iron
 	name = "iron dungeon wall"
 	icon = 'icons/turf/walls/iron_wall.dmi'

@@ -276,6 +276,28 @@
 	icon_state = "miltank"
 	icon_living = "miltank"
 	icon_dead = "miltank_d"
+	var/obj/udder/udder = null
+
+/mob/living/simple_animal/pokemon/miltank/New()
+	udder = new()
+	..()
+
+/mob/living/simple_animal/pokemon/miltank/Destroy()
+	qdel(udder)
+	udder = null
+	return ..()
+
+/mob/living/simple_animal/pokemon/miltank/attackby(obj/item/O, mob/user, params)
+	if(stat == CONSCIOUS && istype(O, /obj/item/weapon/reagent_containers/glass))
+		udder.milkAnimal(O, user)
+	else
+		..()
+
+/mob/living/simple_animal/pokemon/miltank/Life()
+	. = ..()
+	if(stat == CONSCIOUS)
+		udder.generateMilk()
+
 
 /mob/living/simple_animal/pokemon/poochyena
 	name = "poochyena"
