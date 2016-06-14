@@ -18,19 +18,18 @@
 	desc = "A wall. It seems ancient."
 	icon_state = ""
 	canSmoothWith = list(/turf/indestructible/dungeon)
-	smooth = SMOOTH_TRUE
-
+//	smooth = SMOOTH_TRUE
+/*
 /turf/indestructible/dungeon/New()
 	..()
 	if(smooth)
 		smooth_icon(src)
-		icon_state = ""
-
+*/
 /turf/indestructible/dungeon/iron
 	name = "iron dungeon wall"
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron"
-	canSmoothWith = list(/turf/indestructible/dungeon/iron)
+//	canSmoothWith = list(/turf/indestructible/dungeon/iron)
 /turf/indestructible/dungeon/gold
 
 /turf/indestructible/dungeon/silver
