@@ -36,6 +36,22 @@
 	else	//wtf make your ladders properly assholes
 		icon_state = "ladder00"
 
+/obj/structure/ladder/attack_ghost(mob/user)
+	if(up && down)
+		switch( alert("Go up or down the ladder?", "Ladder", "Up", "Down", "Cancel") )
+			if("Up")
+				user.loc = get_turf(up)
+			if("Down")
+				user.loc = get_turf(down)
+			if("Cancel")
+				return
+
+	else if(up)
+		user.loc = get_turf(up)
+
+	else if(down)
+		user.loc = get_turf(down)
+
 /obj/structure/ladder/attack_hand(mob/user)
 	if(up && down)
 		switch( alert("Go up or down the ladder?", "Ladder", "Up", "Down", "Cancel") )
