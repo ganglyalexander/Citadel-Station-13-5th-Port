@@ -102,12 +102,14 @@ Lieutenant
 	L.implanted = 1
 	H.sec_hud_set_implants()
 
+	minor_announce("Lieutenant [H.real_name] has arrived.")
+
 /*
-Service Manager
+Chief of Personnel
 */
-/datum/job/manager
-	title = "Service Manager"
-	flag = MANAGER
+/datum/job/cop
+	title = "Chief of Personnel"
+	flag = COP
 	department_head = list("Captain")
 	department_flag = CIVILIAN
 	faction = "Station"
@@ -118,24 +120,25 @@ Service Manager
 	req_admin_notify = 1
 	minimal_player_age = 8
 
-	outfit = /datum/outfit/job/manager
+	outfit = /datum/outfit/job/cop
 
-	access = list(access_manager, access_heads, access_theatre, access_library, access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station, access_mineral_storeroom, access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons, access_janitor, access_chapel_office, access_crematorium)
-	minimal_access = list(access_manager, access_heads, access_theatre, access_library, access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station, access_mineral_storeroom, access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons, access_janitor, access_chapel_office, access_crematorium)
+	access = list(access_all_personal_lockers, access_RC_announce, access_keycard_auth, access_sec_doors, access_cop, access_heads, access_theatre, access_library, access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station, access_mineral_storeroom, access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons, access_janitor, access_chapel_office, access_crematorium)
+	minimal_access = list(access_all_personal_lockers, access_RC_announce, access_keycard_auth, access_sec_doors, access_cop, access_heads, access_theatre, access_library, access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station, access_mineral_storeroom, access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons, access_janitor, access_chapel_office, access_crematorium)
 
-/datum/outfit/job/manager
-	name = "Service Manager"
+/datum/outfit/job/cop
+	name = "Chief of Personnel"
 
-	belt = /obj/item/device/pda/manager
-	uniform = /obj/item/clothing/under/rank/head_of_personnel/manager
-	ears = /obj/item/device/radio/headset/heads/manager
+	id = /obj/item/weapon/card/id/silver
+	belt = /obj/item/device/pda/cop
+	uniform = /obj/item/clothing/under/rank/head_of_personnel/cop
+	ears = /obj/item/device/radio/headset/heads/cop
 	shoes = /obj/item/clothing/shoes/sneakers/brown/hop
 	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack
 
-/datum/outfit/job/manager/post_equip(mob/living/carbon/human/H)
+/datum/outfit/job/cop/post_equip(mob/living/carbon/human/H)
 	..()
 
 	var/obj/item/clothing/under/U = H.w_uniform

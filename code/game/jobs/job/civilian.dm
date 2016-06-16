@@ -4,12 +4,12 @@ Clown
 /datum/job/clown/
 	title = "Clown"
 	flag = CLOWN
-	department_head = list("Service Manager")
+	department_head = list("Chief of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Service Manager"
+	supervisors = "the Chief of Personnel"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/clown
@@ -48,12 +48,12 @@ Mime
 /datum/job/mime
 	title = "Mime"
 	flag = MIME
-	department_head = list("Service Manager")
+	department_head = list("Chief of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Service Manager"
+	supervisors = "the Chief of Personnel"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/mime
@@ -91,12 +91,12 @@ Librarian
 /datum/job/librarian
 	title = "Librarian"
 	flag = LIBRARIAN
-	department_head = list("Service Manager")
+	department_head = list("Chief of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Service Manager"
+	supervisors = "the Chief of Personnel"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/librarian

@@ -883,8 +883,8 @@ var/list/teleportlocs = list()
 	name = "Quartermasters"
 	icon_state = "quart"
 
-/area/quartermaster/manager
-	name = "Service Manager's"
+/area/quartermaster/cop
+	name = "Chief of Personnel's"
 	icon_state = "quart"
 
 ///////////WORK IN PROGRESS//////////

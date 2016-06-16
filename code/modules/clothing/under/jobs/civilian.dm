@@ -75,9 +75,9 @@
 	item_color = "hop"
 	can_adjust = 0
 
-/obj/item/clothing/under/rank/head_of_personnel/manager
-	desc = "It's a jumpsuit worn by someone who works in the position of \"Service Manager\"."
-	name = "service manager's jumpsuit"
+/obj/item/clothing/under/rank/head_of_personnel/cop
+	desc = "It's a jumpsuit worn by someone who works in the position of \"Chief of Personnel\"."
+	name = "chief of personnel's jumpsuit"
 	icon_state = "hop"
 	item_state = "b_suit"
 	item_color = "hop"
