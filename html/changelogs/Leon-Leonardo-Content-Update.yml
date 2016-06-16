@@ -1,0 +1,13 @@
+author: LeonLeonardo
+
+delete-after: True
+
+changes: 
+  - rscdel: "Removes the Head of Personnel and Quartermaster roles."
+  - rscadd: "Adds the Lieutenant and Chief of Personnel roles."
+  - tweak: "Editted map to fit the new roles.
+  - rscadd: "Added loadercart for the CoP."
+  - rscadd: "Added cargo device for CoP, a hand-held cargo computer. -Thanks to kFive"
+  - rscadd: "Added laser pistols for the Captain and LT, and added a weaker variant in a box to the warden's locker."
+  - rscadd: "Added Tri-Hud Gar glasses for the LT. -Thanks to kFive"
+  

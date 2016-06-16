@@ -185,9 +185,9 @@
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 
-/obj/item/device/radio/headset/heads/manager
-	name = "\proper the service manager's headset"
-	desc = "The headset used by the slave driver -- er, service manager. \nChannels are as follows: :c - command, :u - supply, :v - service."
+/obj/item/device/radio/headset/heads/cop
+	name = "\proper the Chief of Personnel's headset"
+	desc = "The headset used by the slave driver -- er, chief of personnel. \nChannels are as follows: :c - command, :u - supply, :v - service."
 	icon_state = "com_headset"
 	item_state = "headset"
 	keyslot = new /obj/item/device/encryptionkey/heads/hop

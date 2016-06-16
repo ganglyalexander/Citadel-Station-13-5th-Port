@@ -24,6 +24,10 @@
 	name = "quartermaster's cloak"
 	desc = "Worn by Cargonia, supplying the station with the necessary tools for survival."
 
+/obj/item/clothing/cloak/cop
+	name = "chief of personnel's cloak"
+	desc = "Worn by the Chief of Personnel, the master of Greytide."
+
 /obj/item/clothing/cloak/cmo
 	name = "chief medical officer's cloak"
 	desc = "Worn by Meditopia, the valiant men and women keeping pestilence at bay. It's slightly shielded from contaminants."
@@ -50,6 +54,26 @@
 	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 
 /obj/item/clothing/cloak/hop/AltClick()
+	..()
+	if(ismob(loc))
+		var/mob/M = loc
+		if(icon_state == "hopcloak1")
+			icon_state = icon_stash
+			M << "Your cloak fades into the boringness."
+		else
+			icon_stash = icon_state
+			icon_state = "hopcloak1"
+			M << "You flip the cloak so its good side is showing."
+		M.update_inv_back() //Flip the cloak while wearing it.
+
+/obj/item/clothing/cloak/lieutenant
+	name = "lieutenant's cloak."
+	desc = "Worn by the Republic of Ian, masters of Borks. It's slightly shielded from lasers."
+	icon_state = "hopcloak"
+	var/icon_stash = "hopcloak"
+	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/cloak/lieutenant/AltClick()
 	..()
 	if(ismob(loc))
 		var/mob/M = loc
