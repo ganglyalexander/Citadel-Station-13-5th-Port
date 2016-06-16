@@ -16,6 +16,13 @@
 	item_state = "b_suit"
 	item_color = "captain"
 
+/obj/item/clothing/under/rank/lieutenant
+	desc = "It's a blue jumpsuit with some silver markings denoting the rank of \"Lieutenant\"."
+	name = "lieutenant's jumpsuit"
+	icon_state = "lieutenant"
+	item_state = "b_suit"
+	item_color = "lieutenant"
+
 
 /obj/item/clothing/under/rank/cargo
 	name = "quartermaster's jumpsuit"
@@ -63,6 +70,14 @@
 /obj/item/clothing/under/rank/head_of_personnel
 	desc = "It's a jumpsuit worn by someone who works in the position of \"Head of Personnel\"."
 	name = "head of personnel's jumpsuit"
+	icon_state = "hop"
+	item_state = "b_suit"
+	item_color = "hop"
+	can_adjust = 0
+
+/obj/item/clothing/under/rank/head_of_personnel/manager
+	desc = "It's a jumpsuit worn by someone who works in the position of \"Service Manager\"."
+	name = "service manager's jumpsuit"
 	icon_state = "hop"
 	item_state = "b_suit"
 	item_color = "hop"
