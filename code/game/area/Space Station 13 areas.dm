@@ -1196,6 +1196,10 @@ var/list/teleportlocs = list()
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
 
+/area/turret_protected/ai/ante
+	name = "AI Antechamber"
+	icon_state = "ai_chamber"
+
 /area/turret_protected/aisat
 	name = "AI Satellite"
 	icon_state = "ai"
