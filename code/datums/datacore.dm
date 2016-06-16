@@ -392,7 +392,7 @@ var/record_id_num = 1001
 		/*if("Quartermaster")
 			clothes_s = icon('icons/mob/uniform.dmi', "qm_s")
 			clothes_s.Blend(icon('icons/mob/feet.dmi', "brown"), ICON_UNDERLAY)*/
-		if("Service Manager")
+		if("Chief of Personnel")
 			clothes_s = icon('icons/mob/uniform.dmi', "hop_s")
 			clothes_s.Blend(icon('icons/mob/feet.dmi', "brown"), ICON_UNDERLAY)
 		if("Chaplain")

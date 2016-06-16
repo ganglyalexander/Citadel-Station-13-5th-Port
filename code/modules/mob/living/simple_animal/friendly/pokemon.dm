@@ -251,7 +251,32 @@
 	icon_living = "jolteon"
 	icon_dead = "jolteon_d"
 	speak = list("Jolt!", "Jolteon!")
+	var/charge_cooldown_time = 50
+	var/charge_cooldown = 0
+/mob/living/simple_animal/pokemon/eevee/jolteon/attack_hand(mob/user)
+	..()
+	if(!stat)
+		electrocute_mob(user, get_area(src), src, 1)
 
+/mob/living/simple_animal/pokemon/eevee/jolteon/attackby(obj/item/weapon/W, mob/user, params)
+	electrocute_mob(user, get_area(src), src, W.siemens_coefficient)
+	if(!stat && istype(W, /obj/item/weapon/stock_parts/cell))
+		var/obj/item/weapon/stock_parts/cell/C = W
+		if(charge_cooldown)
+			user << "<span class='red'>[src] is recharging!</span>"
+			return
+		if(C.charge == C.maxcharge)
+			user << "<span class='red'>[C] is already fully charged!</span>"
+			return
+		electrocute_mob(user, get_area(src), src, W.siemens_coefficient)
+		user << "<span class='green'>You charge [C] using [src].</span>"
+		C.give(100)
+		C.updateicon()
+		charge_cooldown = 1
+		spawn(charge_cooldown_time)
+			charge_cooldown = 0
+		return
+	..()
 /mob/living/simple_animal/pokemon/larvitar
 	name = "larvitar"
 	desc = "It is born deep underground. It can't emerge until it has entirely consumed the soil around it."
@@ -276,6 +301,28 @@
 	icon_state = "miltank"
 	icon_living = "miltank"
 	icon_dead = "miltank_d"
+	var/obj/udder/udder = null
+
+/mob/living/simple_animal/pokemon/miltank/New()
+	udder = new()
+	..()
+
+/mob/living/simple_animal/pokemon/miltank/Destroy()
+	qdel(udder)
+	udder = null
+	return ..()
+
+/mob/living/simple_animal/pokemon/miltank/attackby(obj/item/O, mob/user, params)
+	if(stat == CONSCIOUS && istype(O, /obj/item/weapon/reagent_containers/glass))
+		udder.milkAnimal(O, user)
+	else
+		..()
+
+/mob/living/simple_animal/pokemon/miltank/Life()
+	. = ..()
+	if(stat == CONSCIOUS)
+		udder.generateMilk()
+
 
 /mob/living/simple_animal/pokemon/poochyena
 	name = "poochyena"

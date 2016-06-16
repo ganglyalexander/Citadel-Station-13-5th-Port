@@ -3,6 +3,7 @@
 	desc = "A sturdy metal ladder."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "ladder11"
+	anchored = 1
 	var/id = null
 	var/height = 0							//the 'height' of the ladder. higher numbers are considered physically higher
 	var/obj/structure/ladder/down = null	//the ladder below this one
@@ -36,6 +37,22 @@
 	else	//wtf make your ladders properly assholes
 		icon_state = "ladder00"
 
+/obj/structure/ladder/attack_ghost(mob/user)
+	if(up && down)
+		switch( alert("Go up or down the ladder?", "Ladder", "Up", "Down", "Cancel") )
+			if("Up")
+				user.loc = get_turf(up)
+			if("Down")
+				user.loc = get_turf(down)
+			if("Cancel")
+				return
+
+	else if(up)
+		user.loc = get_turf(up)
+
+	else if(down)
+		user.loc = get_turf(down)
+
 /obj/structure/ladder/attack_hand(mob/user)
 	if(up && down)
 		switch( alert("Go up or down the ladder?", "Ladder", "Up", "Down", "Cancel") )
@@ -67,6 +84,9 @@
 	add_fingerprint(user)
 
 /obj/structure/ladder/attack_paw(mob/user)
+	return attack_hand(user)
+
+/obj/structure/ladder/attack_alien(mob/user)
 	return attack_hand(user)
 
 /obj/structure/ladder/attackby(obj/item/weapon/W, mob/user, params)

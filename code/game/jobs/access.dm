@@ -65,7 +65,7 @@
 /var/const/access_mineral_storeroom = 64
 /var/const/access_minisat = 65
 /var/const/access_weapons = 66 //Weapon authorization for secbots
-/var/const/access_manager = 67
+/var/const/access_cop = 67
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
@@ -215,7 +215,7 @@
 	            access_hydroponics, access_library, access_lawyer, access_virology, access_cmo, access_qm, access_surgery,
 	            access_theatre, access_research, access_mining, access_mailsorting, access_weapons,
 	            access_heads_vault, access_mining_station, access_xenobiology, access_ce, access_lieutenant, access_hos, access_RC_announce,
-	            access_keycard_auth, access_tcomsat, access_gateway, access_mineral_storeroom, access_minisat, access_manager /*access_hop*/)
+	            access_keycard_auth, access_tcomsat, access_gateway, access_mineral_storeroom, access_minisat, access_lieutenant, access_cop /*access_hop*/)
 
 /proc/get_all_centcom_access()
 	return list(access_cent_general, access_cent_thunder, access_cent_specops, access_cent_medical, access_cent_living, access_cent_storage, access_cent_teleporter, access_cent_captain)
@@ -251,7 +251,7 @@
 		if(6) //supply
 			return list(access_mailsorting, access_mining, access_mining_station, access_mineral_storeroom, access_cargo, access_qm)
 		if(7) //command
-			return list(access_heads, access_RC_announce, access_keycard_auth, access_change_ids, access_ai_upload, access_teleporter, access_eva, access_gateway, access_all_personal_lockers, access_heads_vault, access_lieutenant, /*access_hop,*/ access_captain)
+			return list(access_heads, access_RC_announce, access_keycard_auth, access_change_ids, access_ai_upload, access_teleporter, access_eva, access_gateway, access_all_personal_lockers, access_heads_vault, access_lieutenant, /*access_hop,*/ access_captain, access_cop)
 
 /proc/get_region_accesses_name(code)
 	switch(code)
@@ -404,6 +404,8 @@
 			return "AI Satellite"
 		if(access_weapons)
 			return "Weapon Permit"
+		if(access_cop)
+			return "Chief of Personnel"
 
 /proc/get_centcom_access_desc(A)
 	switch(A)
@@ -428,7 +430,7 @@
 	return list("Assistant", "Captain", /*"Head of Personnel",*/ "Lieutenant", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
 				"Shaft Miner", "Clown", "Mime", "Janitor", "Librarian", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist",
-				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer")
+				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer", "Chief of Personnel")
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs() + list("Prisoner")

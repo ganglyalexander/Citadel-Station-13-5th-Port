@@ -128,7 +128,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	icon_state = "pda-lieutenant"
 	detonate = 0
 
-/obj/item/device/pda/manager
+/obj/item/device/pda/cop
 	default_cartridge = /obj/item/weapon/cartridge/hop
 	icon_state = "pda-hop"
 

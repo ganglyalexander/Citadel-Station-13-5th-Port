@@ -18,23 +18,27 @@
 	new /obj/item/clothing/glasses/meson(src)
 	new /obj/item/clothing/head/soft(src)
 
-/obj/structure/closet/secure_closet/manager
-	name = "\proper service manager's locker"
-	req_access = list(access_manager)
+/obj/structure/closet/secure_closet/cop
+	name = "\proper chief of personnel's locker"
+	req_access = list(access_cop)
 	icon_state = "hop"
 
-/obj/structure/closet/secure_closet/manager/New()
+/obj/structure/closet/secure_closet/cop/New()
 	..()
-	new /obj/item/clothing/under/rank/head_of_personnel/manager(src)
+	new /obj/item/clothing/under/rank/head_of_personnel/cop(src)
+	new /obj/item/clothing/under/rank/cargo(src)
+	new /obj/item/clothing/cloak/qm(src)
 	new /obj/item/weapon/cartridge/hop(src)
-	new /obj/item/device/radio/headset/heads/manager(src)
+	new /obj/item/device/radio/headset/heads/cop(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/gloves/fingerless(src)
 	new /obj/item/device/megaphone/command(src)
-	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/device/assembly/flash/handheld(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/weapon/mining_voucher(src)
 	new /obj/item/weapon/mining_voucher(src)
 	new /obj/item/clothing/tie/red(src)
 	new /obj/item/clothing/head/soft(src)
-	new /obj/item/weapon/storage/box/ids(src)
+	new /obj/item/clothing/tie/petcollar(src)
+	new /obj/item/weapon/folder/documents(src)
+	new /obj/item/device/portacargo(src)

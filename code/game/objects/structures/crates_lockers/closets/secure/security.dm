@@ -50,7 +50,7 @@
 	new /obj/item/weapon/gun/energy/gun(src)
 	new /obj/item/clothing/tie/petcollar(src)*/
 
-/obj/structure/closet/secure_closet/hop/lieutenant
+/obj/structure/closet/secure_closet/lieutenant
 	name = "\proper lieutenant's locker"
 	req_access = list(access_lieutenant)
 	icon_state = "hop"
@@ -72,6 +72,7 @@
 	new /obj/item/weapon/gun/energy/gun/pistol_advance(src)
 	new /obj/item/clothing/tie/petcollar(src)
 	new /obj/item/clothing/cloak/hop(src)
+	new /obj/item/clothing/glasses/hud/tristate/supergars(src)
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"

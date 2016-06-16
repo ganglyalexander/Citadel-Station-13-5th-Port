@@ -308,6 +308,10 @@
 	desc = "A keyring with a small steel key, and a rubber stun baton accessory."
 	icon_state = "keysec"
 
+/obj/item/key/loader
+	desc = "A keyring with a small steel key, and a miniature red crowbar accessory."
+	icon_state = "keyloader"
+
 /obj/item/janiupgrade
 	name = "floor buffer upgrade"
 	desc = "An upgrade for mobile janicarts."
@@ -323,6 +327,19 @@
 	keytype = /obj/item/key/security
 
 /obj/structure/bed/chair/janicart/secway/update_mob()
+	if(buckled_mob)
+		buckled_mob.dir = dir
+		buckled_mob.pixel_y = 4
+
+/obj/structure/bed/chair/janicart/loadercart
+	name = "loadercart"
+	desc = "A brave loader cyborg gave its life to help you look like even more of a tool."
+	icon = 'icons/obj/vehicles.dmi'
+	icon_state = "loadercart"
+	callme = "loadercart"
+	keytype = /obj/item/key/loader
+
+/obj/structure/bed/chair/janicart/loadercart/update_mob()
 	if(buckled_mob)
 		buckled_mob.dir = dir
 		buckled_mob.pixel_y = 4

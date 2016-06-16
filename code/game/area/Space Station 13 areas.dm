@@ -883,8 +883,8 @@ var/list/teleportlocs = list()
 	name = "Quartermasters"
 	icon_state = "quart"
 
-/area/quartermaster/manager
-	name = "Service Manager's"
+/area/quartermaster/cop
+	name = "Chief of Personnel's"
 	icon_state = "quart"
 
 ///////////WORK IN PROGRESS//////////
@@ -1194,6 +1194,10 @@ var/list/teleportlocs = list()
 
 /area/turret_protected/ai
 	name = "AI Chamber"
+	icon_state = "ai_chamber"
+
+/area/turret_protected/ai/ante
+	name = "AI Antechamber"
 	icon_state = "ai_chamber"
 
 /area/turret_protected/aisat

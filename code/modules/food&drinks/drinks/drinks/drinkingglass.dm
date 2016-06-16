@@ -587,8 +587,23 @@
 				icon_state = "shotglassbrown"
 				name = "shot of cognac"
 				desc = "You get the feeling this would piss off a rich person somewhere."
+			if("semen")
+				icon_state = "shotglasswhite"
+				name = "cum shot"
+				desc = "Is this ironic or what?"
+			if("hornychem")
+				icon_state = "shotglasspink"
+				name = "shot of aphrodisiac"
+				desc = "You'll be shooting after this, that's for sure."
+			if("milk")
+				icon_state = "shotglasswhite"
+				name = "shot of milk"
+				desc = "White and nutritious goodness!"
 			else
-				icon_state = "shotglassbrown"
+				icon_state = "shotglassclear"
+				var/image/I = image(icon, "shotglassoverlay")
+				I.color = mix_color_from_reagents(reagents.reagent_list)
+				overlays += I
 				name = "shot of... what?"
 				desc = "You can't really tell what's in the glass."
 	else

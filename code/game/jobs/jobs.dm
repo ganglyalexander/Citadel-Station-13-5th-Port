@@ -35,7 +35,7 @@ var/const/COOK				=(1<<2)
 var/const/JANITOR			=(1<<3)
 var/const/LIBRARIAN			=(1<<4)
 //var/const/QUARTERMASTER	=(1<<6)
-var/const/MANAGER			=(1<<5)
+var/const/COP				=(1<<5)
 var/const/CARGOTECH			=(1<<6)
 var/const/MINER				=(1<<7)
 var/const/LAWYER			=(1<<8)
@@ -63,7 +63,7 @@ var/list/command_positions = list(
 	"Chief Engineer",
 	"Research Director",
 	"Chief Medical Officer",
-	"Service Manager",
+	"Chief of Personnel",
 )
 
 
@@ -99,7 +99,7 @@ var/list/supply_positions = list(
 
 
 var/list/civilian_positions = list(
-	"Service Manager",
+	"Chief of Personnel",
 	"Bartender",
 	"Botanist",
 	"Cook",
