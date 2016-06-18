@@ -52,7 +52,7 @@
 		chambered.loc = get_turf(src)//Eject casing
 		chambered.SpinAnimation(5, 1)
 		chambered = null
-		spawn(5)
+		spawn(3)
 			playsound(get_turf(src), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_reload(mob/M)
