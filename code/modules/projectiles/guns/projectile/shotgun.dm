@@ -16,6 +16,7 @@
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
 		user << "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>"
+		playsound(get_turf(src), 'sound/weapons/shotshellload_1.ogg', 25, 1)
 		A.update_icon()
 		update_icon()
 
@@ -51,6 +52,8 @@
 		chambered.loc = get_turf(src)//Eject casing
 		chambered.SpinAnimation(5, 1)
 		chambered = null
+		spawn(5)
+			playsound(get_turf(src), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_reload(mob/M)
 	if(!magazine.ammo_count())	return 0
