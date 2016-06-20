@@ -52,11 +52,14 @@
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_unload(mob/M)
 	if(chambered)//We have a shell in the chamber
+		var/obj/item/ammo_casing/CB
+		CB = src.chambered
 		chambered.loc = get_turf(src)//Eject casing
 		chambered.SpinAnimation(5, 1)
 		chambered = null
 		spawn(3)
-			playsound(get_turf(src), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
+			if(has_gravity(CB))
+				playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_reload(mob/M)
 	if(!magazine.ammo_count())	return 0
@@ -178,8 +181,8 @@
 		CB.loc = get_turf(src.loc)
 		CB.update_icon()
 		num_unloaded++
-		if(num_unloaded)
-			spawn(5)
+		if(num_unloaded & has_gravity(CB))
+			spawn(rand(3,7))
 				if(istype(CB, /obj/item/ammo_casing/shotgun))
 					playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 				else

@@ -306,8 +306,8 @@
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=3"
 	mag_type = /obj/item/ammo_box/magazine/m110
-	fire_delay = 17
-	recoil = 2
+	fire_delay = 5
+	recoil = 5
 	heavy_weapon = 1
 	fire_sound = "sound/weapons/sniper.ogg"
 	action_button_name = null
@@ -315,30 +315,9 @@
 	suppressed = 0
 	w_class = 4
 	burst_size = 1
-	var/zoom = 0
+	zoomable = TRUE
+	zoom_amt = 7
 	pin = /obj/item/device/firing_pin/implant/loyalty
 
 /obj/item/weapon/gun/projectile/automatic/m110/unrestricted
 	pin = /obj/item/device/firing_pin/
-
-/*
-/obj/item/weapon/gun/projectile/automatic/m110/ui_action_click()
-	rifle_zoom()
-
-/obj/item/weapon/gun/projectile/automatic/m110/proc/rifle_zoom()
-	if(!usr.unEquip(zoom))
-		usr.client.view = world.view
-		return
-	if(usr.inHand())
-		zoom = !zoom
-		if(zoom)
-			recoil = 5
-			usr.client.view = 14
-			usr.canmove = 0
-			usr << sound('sound/mecha/imag_enh.ogg',volume=50)
-		else
-			recoil = 2
-			usr.canmove = 1
-			usr.client.view = world.view
-			..()
-			*/

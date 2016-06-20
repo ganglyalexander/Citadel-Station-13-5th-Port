@@ -50,8 +50,8 @@
 			CB.SpinAnimation(10, 1)
 			CB.update_icon()
 			num_unloaded++
-			if(num_unloaded)
-				spawn(5)
+			if(num_unloaded & has_gravity(CB))
+				spawn(rand(2,7))
 					if(istype(CB, /obj/item/ammo_casing/shotgun))
 						playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 					else
