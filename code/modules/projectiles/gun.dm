@@ -355,7 +355,8 @@
 		if(F.on)
 			user.AddLuminosity(-F.brightness_on)
 			SetLuminosity(F.brightness_on)
-
+	if(azoom)
+		azoom.Remove(user)
 
 /obj/item/weapon/gun/attack_hand(mob/user)
 	if(unique_reskin && !reskinned && loc == user)
