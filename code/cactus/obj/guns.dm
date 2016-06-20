@@ -67,7 +67,7 @@
 			user.Weaken(3)
 			user.visible_message("<span class='danger'>[user] is knocked over by the recoil of [src]!</span>", "<span class='userdanger'>The recoil knocks you over!</span>")
 			if(heavy_weapon)
-				user.take_organ_damage(5)
+				user.take_organ_damage(10)
 
 /obj/item/weapon/gun/projectile/shotgun/shoot_live_shot(mob/living/user as mob|obj, pointblank = 0, mob/pbtarget = null, message = 1)
 	..()
