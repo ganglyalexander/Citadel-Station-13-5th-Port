@@ -347,6 +347,8 @@
 		if(F.on)
 			user.AddLuminosity(F.brightness_on)
 			SetLuminosity(0)
+	if(azoom)
+		azoom.Grant(user)
 
 /obj/item/weapon/gun/dropped(mob/user)
 	if(F)

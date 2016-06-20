@@ -304,10 +304,10 @@
 	icon_state = "m110"
 	item_state = "m110"
 	slot_flags = SLOT_BACK
-	origin_tech = "combat=4;materials=3"
+	origin_tech = "combat=6;materials=4"
 	mag_type = /obj/item/ammo_box/magazine/m110
-	fire_delay = 5
-	recoil = 5
+	fire_delay = 10
+	recoil = 3
 	heavy_weapon = 1
 	fire_sound = "sound/weapons/sniper.ogg"
 	action_button_name = null
@@ -320,4 +320,4 @@
 	pin = /obj/item/device/firing_pin/implant/loyalty
 
 /obj/item/weapon/gun/projectile/automatic/m110/unrestricted
-	pin = /obj/item/device/firing_pin/
+	pin = /obj/item/device/firing_pin
