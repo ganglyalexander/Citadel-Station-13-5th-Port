@@ -16,6 +16,10 @@
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
 		user << "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>"
+		if(istype(A, /obj/item/ammo_casing/shotgun))
+			playsound(get_turf(src), 'sound/weapons/shotshellload_1.ogg', 25, 1)
+		else
+			playsound(get_turf(src), 'sound/weapons/chamber.ogg', 25, 1)
 		A.update_icon()
 		update_icon()
 
@@ -48,9 +52,14 @@
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_unload(mob/M)
 	if(chambered)//We have a shell in the chamber
+		var/obj/item/ammo_casing/CB
+		CB = src.chambered
 		chambered.loc = get_turf(src)//Eject casing
 		chambered.SpinAnimation(5, 1)
 		chambered = null
+		spawn(3)
+			if(has_gravity(CB))
+				playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump_reload(mob/M)
 	if(!magazine.ammo_count())	return 0
@@ -103,8 +112,10 @@
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 	if(bolt_open)
 		pump_reload(M)
+		M << "You close the bolt."
 	else
 		pump_unload(M)
+		M << "You open the bolt."
 	bolt_open = !bolt_open
 	update_icon()	//I.E. fix the desc
 	return 1
@@ -153,6 +164,7 @@
 	..()
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
+		playsound(get_turf(src), 'sound/weapons/shotshellload_1.ogg', 25, 1)
 	if(istype(A, /obj/item/weapon/melee/energy))
 		var/obj/item/weapon/melee/energy/W = A
 		if(W.active)
@@ -169,6 +181,12 @@
 		CB.loc = get_turf(src.loc)
 		CB.update_icon()
 		num_unloaded++
+		if(num_unloaded & has_gravity(CB))
+			spawn(rand(3,7))
+				if(istype(CB, /obj/item/ammo_casing/shotgun))
+					playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
+				else
+					playsound(get_turf(CB), 'sound/weapons/casingimpact01.ogg', 25, 1)
 	if (num_unloaded)
 		user << "<span class='notice'>You break open \the [src] and unload [num_unloaded] shell\s.</span>"
 	else
