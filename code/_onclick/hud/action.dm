@@ -3,7 +3,7 @@
 #define AB_CHECK_LYING 4
 #define AB_CHECK_ALIVE 8
 #define AB_CHECK_INSIDE 16
-
+#define AB_CHECK_CONSCIOUS 32
 
 /datum/action
 	var/name = "Generic Action"
@@ -76,6 +76,9 @@
 			return 0
 	if(check_flags & AB_CHECK_INSIDE)
 		if(!(target in owner) && !(target.action_button_internal))
+			return 0
+	if(check_flags & AB_CHECK_CONSCIOUS)
+		if(owner.stat)
 			return 0
 	return 1
 
@@ -193,7 +196,7 @@
 
 //Presets for item actions
 /datum/action/item_action
-	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUNNED|AB_CHECK_LYING|AB_CHECK_ALIVE|AB_CHECK_INSIDE
+	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUNNED|AB_CHECK_LYING|AB_CHECK_ALIVE|AB_CHECK_INSIDE|AB_CHECK_CONSCIOUS
 
 /datum/action/item_action/Trigger()
 	if(!..())
@@ -216,10 +219,10 @@
 		I.layer = old
 
 /datum/action/item_action/hands_free
-	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE
+	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE|AB_CHECK_CONSCIOUS
 
 /datum/action/item_action/organ_action
-	check_flags = AB_CHECK_ALIVE
+	check_flags = AB_CHECK_ALIVE|AB_CHECK_CONSCIOUS
 
 /datum/action/item_action/organ_action/CheckRemoval(mob/living/carbon/user)
 	if(!iscarbon(user))

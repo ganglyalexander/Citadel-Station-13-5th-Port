@@ -27,6 +27,12 @@
 	if(eject_casing)
 		AC.loc = get_turf(src) //Eject casing onto ground.
 		AC.SpinAnimation(10, 1) //next gen special effects
+		spawn(5)
+			if(has_gravity(AC))
+				if(istype(AC, /obj/item/ammo_casing/shotgun))
+					playsound(get_turf(AC), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
+				else
+					playsound(get_turf(AC), 'sound/weapons/casingimpact01.ogg', 25, 1)
 
 	if(empty_chamber)
 		chambered = null

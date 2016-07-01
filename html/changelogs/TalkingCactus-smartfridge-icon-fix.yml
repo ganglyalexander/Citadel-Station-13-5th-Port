@@ -1,6 +1,0 @@
-author: TalkingCactus
-
-delete-after: True
-
-changes: 
-  - bugfix: "Fixed smartfridges not having an icon state when they were opened with a screwdriver."

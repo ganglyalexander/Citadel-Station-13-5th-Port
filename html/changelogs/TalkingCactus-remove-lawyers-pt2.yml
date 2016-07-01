@@ -1,7 +1,0 @@
-author: TalkingCactus
-
-delete-after: True
-
-changes: 
-  - rscdel: "Removed lawyers."
-  - rscadd: "Replaced lawyer's office with a storage closet."

@@ -30,6 +30,10 @@
 		A.update_icon()
 		update_icon()
 		chamber_round(0)
+		if(istype(A, /obj/item/ammo_casing/shotgun))
+			playsound(get_turf(src), 'sound/weapons/shotshellload_1.ogg', 25, 1)
+		else
+			playsound(get_turf(src), 'sound/weapons/chamber.ogg', 25, 1)
 
 	if(unique_rename)
 		if(istype(A, /obj/item/weapon/pen))
@@ -46,6 +50,12 @@
 			CB.SpinAnimation(10, 1)
 			CB.update_icon()
 			num_unloaded++
+			if(num_unloaded & has_gravity(CB))
+				spawn(rand(2,7))
+					if(istype(CB, /obj/item/ammo_casing/shotgun))
+						playsound(get_turf(CB), 'sound/weapons/shotshelleject_1.ogg', 25, 1)
+					else
+						playsound(get_turf(CB), 'sound/weapons/casingimpact01.ogg', 25, 1)
 	if (num_unloaded)
 		user << "<span class='notice'>You unload [num_unloaded] shell\s from [src].</span>"
 	else
@@ -66,6 +76,7 @@
 		C.spin()
 		chamber_round(0)
 		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
+		playsound(get_turf(src), 'sound/weapons/revolverSpin.ogg', 50, 1)
 	else
 		verbs -= /obj/item/weapon/gun/projectile/revolver/verb/spin
 
@@ -94,7 +105,7 @@
 	unique_rename = 1
 	unique_reskin = 1
 	pin = /obj/item/device/firing_pin/implant/loyalty
-	
+
 /obj/item/weapon/gun/projectile/revolver/detective/New()
 	..()
 	options["Default"] = "detective"

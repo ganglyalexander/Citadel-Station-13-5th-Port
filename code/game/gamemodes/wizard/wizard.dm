@@ -59,7 +59,7 @@
 				var/datum/objective/escape/escape_objective = new
 				escape_objective.owner = wizard
 				wizard.objectives += escape_objective
-		if(31 to 60)
+		if(1 to 60)
 			var/datum/objective/steal/steal_objective = new
 			steal_objective.owner = wizard
 			steal_objective.find_target()
@@ -86,11 +86,11 @@
 				survive_objective.owner = wizard
 				wizard.objectives += survive_objective
 
-		else
+		/*else
 			if (!(locate(/datum/objective/hijack) in wizard.objectives))
 				var/datum/objective/hijack/hijack_objective = new
 				hijack_objective.owner = wizard
-				wizard.objectives += hijack_objective
+				wizard.objectives += hijack_objective*/
 	return
 
 

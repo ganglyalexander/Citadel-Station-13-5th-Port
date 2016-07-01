@@ -2,7 +2,9 @@
 //CONTENTS//
 ////////////
 //
-//CANDY CORN SMG
+//CANDY CORN GUNS
+//
+//MICROS SHOOTING GUNS
 //
 ///////
 //END//
@@ -53,3 +55,26 @@
 	caliber = "candy"
 	max_ammo = 20
 	multiple_sprites = 2
+
+////////////////////////
+//MICROS SHOOTING GUNS//
+////////////////////////
+
+/obj/item/weapon/gun/projectile/shoot_live_shot(mob/living/user as mob|obj, pointblank = 0, mob/pbtarget = null, message = 1)
+	..()
+	if(user.sizeplay_size == 1)
+		if(user.get_active_hand() == src)
+			user.Weaken(3)
+			user.visible_message("<span class='danger'>[user] is knocked over by the recoil of [src]!</span>", "<span class='userdanger'>The recoil knocks you over!</span>")
+			if(heavy_weapon)
+				user.take_organ_damage(10)
+
+/obj/item/weapon/gun/projectile/shotgun/shoot_live_shot(mob/living/user as mob|obj, pointblank = 0, mob/pbtarget = null, message = 1)
+	..()
+	if(user.sizeplay_size == 1)
+		if(user.get_active_hand() == src)
+			user.Weaken(3)
+			user.visible_message("<span class='danger'>[user] is knocked over by the recoil of [src]!</span>", "<span class='userdanger'>The recoil knocks you over!</span>")
+			user.take_organ_damage(5)
+			if(heavy_weapon)
+				user.take_organ_damage(10)
