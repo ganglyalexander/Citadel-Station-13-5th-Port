@@ -48,7 +48,7 @@
 
 /datum/game_mode/proc/forge_wizard_objectives(datum/mind/wizard)
 	switch(rand(1,100))
-		/*if(1 to 30)
+		if(1 to 30)
 
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = wizard
@@ -58,7 +58,7 @@
 			if (!(locate(/datum/objective/escape) in wizard.objectives))
 				var/datum/objective/escape/escape_objective = new
 				escape_objective.owner = wizard
-				wizard.objectives += escape_objective*/
+				wizard.objectives += escape_objective
 		if(1 to 60)
 			var/datum/objective/steal/steal_objective = new
 			steal_objective.owner = wizard
