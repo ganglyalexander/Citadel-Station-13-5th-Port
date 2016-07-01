@@ -53,7 +53,7 @@ var/datum/subsystem/events/SSevent
 /datum/subsystem/events/proc/reschedule()
 	scheduled = world.time + rand(frequency_lower, max(frequency_lower,frequency_upper))
 
-	if(world.time > 6300) //Three.
+	if(world.time > 63000) //Three.
 		frequency_lower=1000
 		frequency_upper=1500
 		//if ((!( ticker ) || emergency_shuttle.location))
