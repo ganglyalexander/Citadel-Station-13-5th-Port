@@ -718,7 +718,9 @@ var/list/mutant_wings = list(
 	"feathery"="feathery",
 	"moth"="moth",
 	"fairy"="fairy",
-	"tentacle"="tentacle"
+	"tentacle"="tentacle",
+	"angel" = "angel",
+	"bee" = "bee"
 	)
 
 var/list/cock_list = list(
