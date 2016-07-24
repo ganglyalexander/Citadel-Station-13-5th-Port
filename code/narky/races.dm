@@ -18,7 +18,7 @@ datum
 			tail=1
 			say_mod="churbles"
 			attack_verb = "aggressively hug"
-			restricted=2
+			restricted="ChronoFlux"
 		abductor
 			//name="abductor"
 			id="abductor"
