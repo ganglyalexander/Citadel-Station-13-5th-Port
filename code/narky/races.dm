@@ -10,6 +10,15 @@ datum
 			generic="human"
 			adjective="ordinary"
 			taur="horse"
+		slimecoon
+			name="slimecoon"
+			id="slimecoon"
+			generic="slimecoon"
+			adjective="slimy"
+			tail=1
+			say_mod="churbles"
+			attack_verb = "aggressively hug"
+			restricted="ChronoFlux"
 		abductor
 			//name="abductor"
 			id="abductor"
@@ -47,6 +56,14 @@ datum
 			generic="jackal" // mmm...jackal or canine? i'll leave it for now
 			adjective="cold"
 			attack_verb = "claw"
+		bat
+			name="bat"
+			id="bat"
+			generic="Chiroptera"
+			adjective="winged foxy"
+			tail=1
+			say_mod = "sonars"
+			attack_verb = "bite"
 		beaver
 			name="beaver"
 			id="beaver"
@@ -419,6 +436,12 @@ datum
 			generic="reptile"
 			adjective="hard-shelled"
 			tail=1
+		toucan
+			name="toucan"
+			id="toucan"
+			say_mod="squawk"
+			generic="big bill"
+			adjective="birdy"
 		ursine
 			name="bear"
 			id="ursine"
@@ -695,7 +718,9 @@ var/list/mutant_wings = list(
 	"feathery"="feathery",
 	"moth"="moth",
 	"fairy"="fairy",
-	"tentacle"="tentacle"
+	"tentacle"="tentacle",
+	"angel" = "angel",
+	"bee" = "bee"
 	)
 
 var/list/cock_list = list(

@@ -172,6 +172,12 @@
 	icon_living = "ampharos"
 	icon_dead = "ampharos_d"
 
+/mob/living/simple_animal/pokemon/bulbasaur
+	name = "bulbasaur"
+	icon_state = "bulbasaur"
+	icon_living = "bulbasaur"
+	icon_dead = "bulbasaur_d"
+
 /mob/living/simple_animal/pokemon/charmander
 	name = "charmander"
 	icon_state = "charmander"
@@ -284,11 +290,23 @@
 	icon_living = "larvitar"
 	icon_dead = "larvitar_d"
 
+/mob/living/simple_animal/pokemon/leafeon
+	name = "leafeon"
+	icon_state = "leafeon"
+	icon_living = "leafeon"
+	icon_dead = "leafeon"
+
 /mob/living/simple_animal/pokemon/mareep
 	name = "mareep"
 	icon_state = "mareep"
 	icon_living = "mareep"
 	icon_dead = "mareep_d"
+
+/mob/living/simple_animal/pokemon/mew
+	name = "mew"
+	icon_state = "mew"
+	icon_living = "mew"
+	icon_dead = "mew_d"
 
 /mob/living/simple_animal/pokemon/poochyena/mightyena
 	name = "mightyena"
@@ -323,12 +341,29 @@
 	if(stat == CONSCIOUS)
 		udder.generateMilk()
 
+/mob/living/simple_animal/pokemon/rattata
+	name = "rattata"
+	icon_state = "rattata"
+	icon_living = "rattata"
+	icon_dead = "rattata_d"
 
 /mob/living/simple_animal/pokemon/poochyena
 	name = "poochyena"
 	icon_state = "poochyena"
 	icon_living = "poochyena"
 	icon_dead = "poochyena_d"
+
+/mob/living/simple_animal/pokemon/pikachu
+	name = "pikachu"
+	icon_state = "pikachu"
+	icon_living = "pikachu"
+	icon_dead = "pikachu_d"
+
+/mob/living/simple_animal/pokemon/stunky
+	name = "stunky"
+	icon_state = "stunky"
+	icon_living = "stunky"
+	icon_dead = "stunky_d"
 
 /mob/living/simple_animal/pokemon/eevee/sylveon
 	name = "Sylveon"
