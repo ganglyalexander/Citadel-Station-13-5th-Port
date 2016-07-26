@@ -3,7 +3,7 @@ datum
 		//specflags = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 		var/generic="something"
 		var/adjective="unknown"
-		var/restricted=0 //Set to 1 to not allow anyone to choose it, 2 to hide it from the DNA scanner, and text to restrict it to one person
+		var/restricted=0 //Set to 1 to not allow anyone to choose it, 2 to hide it from the DNA scanner, and text to restrict it to one person. Make sure to CAPITALIZE any letters in their ckey.
 		var/tail=0
 		var/taur=0
 		human
@@ -38,7 +38,10 @@ datum
 			generic="xeno"
 			adjective="phallic"
 			tail=1
-		/* armadillo
+			attack_verb = "nom" // apparently attack verbs are just the verb, no S. shrug
+			attack_sound = 'sound/weapons/bite.ogg'
+			/*
+			armadillo
 			name="armadillo"
 			id="armadillo"
 			say_mod = "drawls"
@@ -46,9 +49,8 @@ datum
 			adjective = "protected"
 			tail=1
 			attack_verb = "noms"
-			attack_sound = 'sound/weapons/bite.ogg' */
-			attack_verb = "nom" // apparently attack verbs are just the verb, no S. shrug
 			attack_sound = 'sound/weapons/bite.ogg'
+			*/
 		anubis
 			name="anubis"
 			id="anubis"
@@ -584,7 +586,7 @@ proc/kpcode_race_genlist()
 			if(D.name!="undefined")
 				kpcode_race_list[D.name] = D*/
 
-proc/kpcode_race_getlist(var/restrict=0)
+proc/kpcode_race_getlist(var/restrict="")
 	var/list/race_options = list()
 	for(var/r_id in species_list)
 		var/datum/species/R = kpcode_race_get(r_id)
