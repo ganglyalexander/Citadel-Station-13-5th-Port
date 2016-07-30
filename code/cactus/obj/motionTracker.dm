@@ -82,9 +82,9 @@
 			var/mob/living/L = locate() in T
 			if(L && (get_turf(L) != get_turf(src)) && !L.stat)
 				flick_blip(O.loc)
-				playsound(get_turf(L),'code/cactus/sound/trackFull.ogg', 100, 0 ,0)
+				playsound(get_turf(L),'code/cactus/sound/trackFull.ogg', 25, 0 ,0)
 			else
-				playsound(get_turf(src),'code/cactus/sound/trackHalf.ogg', 50, 0 ,0)
+				playsound(get_turf(src),'code/cactus/sound/trackHalf.ogg', 15, 0 ,0)
 
 /obj/item/device/t_scanner/proc/flick_blip(turf/T)
 	var/image/B = image('code/cactus/obj/obj.dmi', T, icon_state = "blip")
