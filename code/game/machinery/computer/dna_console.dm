@@ -348,6 +348,7 @@
 					if("mixed")
 						apply_buffer(SCANNER_ACTION_MIXED,num)
 		if("injector")
+			return
 			if(num && injectorready)
 				num = Clamp(num, 1, NUMBER_OF_BUFFERS)
 				var/list/buffer_slot = buffer[num]
@@ -494,7 +495,7 @@
 	var/list/buffer_slot = buffer[buffer_num]
 	var/mob/living/carbon/viable_occupant = get_viable_occupant()
 	if(istype(buffer_slot))
-		viable_occupant.radiation += rand(10/(connected.damage_coeff ** 2),25/(connected.damage_coeff ** 2)) 
+		viable_occupant.radiation += rand(10/(connected.damage_coeff ** 2),25/(connected.damage_coeff ** 2))
 		//15 and 40 are just magic numbers that were here before so i didnt touch them, they are initial boundaries of damage
 		//Each laser level reduces damage by lvl^2, so no effect on 1 lvl, 4 times less damage on 2 and 9 times less damage on 3
 		//Numbers are this high because other way upgrading laser is just not worth the hassle, and i cant think of anything better to inmrove
