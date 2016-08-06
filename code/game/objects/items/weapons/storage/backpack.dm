@@ -103,6 +103,15 @@
 	explosion(src.loc,(dist),(dist*2),(dist*4))
 	return
 
+/*
+ * Custom Backpack
+ */
+/obj/item/weapon/storage/backpack/RadioPack
+	name = "radio pack"
+	desc = "A backpack with a radio installed in it! It doesn't seem to do anything...."
+	icon_state = "radio-pack"
+	item_state = "radio-pack"
+
 
 /obj/item/weapon/storage/backpack/santabag
 	name = "Santa's Gift Bag"
@@ -387,4 +396,6 @@
 	desc = "A large dufflebag for holding lots of funny gags!"
 	icon_state = "duffle-clown"
 	item_state = "duffle-clown"
+
+
 
