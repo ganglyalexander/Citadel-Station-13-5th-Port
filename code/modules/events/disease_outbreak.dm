@@ -1,8 +1,8 @@
 /datum/round_event_control/disease_outbreak
 	name = "Disease Outbreak"
 	typepath = /datum/round_event/disease_outbreak
-	max_occurrences = 1
-	weight = 5
+	max_occurrences = 0
+	weight = 0
 
 /datum/round_event/disease_outbreak
 	announceWhen	= 15
