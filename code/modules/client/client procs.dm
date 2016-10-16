@@ -168,6 +168,7 @@ var/next_external_rsc = 0
 
 		if (config.notify_new_player_age >= 0)
 			message_admins("New user: [key_name_admin(src)] is connecting here for the first time.")
+			check_multilog()
 			if (config.irc_first_connection_alert)
 				send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
 
@@ -296,6 +297,11 @@ var/next_external_rsc = 0
 	if(config.see_own_notes)
 		verbs += /client/proc/self_notes
 
+/client/proc/check_multilog()
+	if(related_accounts_cid && (related_accounts_cid != "Requires database"))
+		message_admins("<span class='adminnotice'>Multilog Warning: [key_name_admin(src)] CID matches these other ckeys: [related_accounts_cid]</span>")
+	if(related_accounts_ip && (related_accounts_ip != "Requires database"))
+		message_admins("<span class='adminnotice'>Multilog Warning: [key_name_admin(src)] IP matches these other ckeys: [related_accounts_ip]</span>")
 
 #undef TOPIC_SPAM_DELAY
 #undef UPLOAD_LIMIT
