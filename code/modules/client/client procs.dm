@@ -124,6 +124,10 @@ var/next_external_rsc = 0
 		admins += src
 		holder.owner = src
 
+	if(check_rights(R_ADMIN))
+		if(ahelp_count(0) > 0)
+			list_ahelps(src, 0)
+
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = preferences_datums[ckey]
 	if(!prefs)
@@ -169,8 +173,8 @@ var/next_external_rsc = 0
 		if (config.notify_new_player_age >= 0)
 			message_admins("New user: [key_name_admin(src)] is connecting here for the first time.")
 			check_multilog()
-			if (config.irc_first_connection_alert)
-				send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
+		//	if (config.irc_first_connection_alert)
+	//			send2irc_adminless_only("New-user", "[key_name(src)] is connecting for the first time!")
 
 		player_age = 0 // set it from -1 to 0 so the job selection code doesn't have a panic attack
 
@@ -274,7 +278,7 @@ var/next_external_rsc = 0
 	var/watchreason = check_watchlist(sql_ckey)
 	if(watchreason)
 		message_admins("<font color='red'><B>Notice: </B></font><font color='blue'>[key_name_admin(src)] is on the watchlist and has just connected - Reason: [watchreason]</font>")
-		send2irc_adminless_only("Watchlist", "[key_name(src)] is on the watchlist and has just connected - Reason: [watchreason]")
+	//	send2irc_adminless_only("Watchlist", "[key_name(src)] is on the watchlist and has just connected - Reason: [watchreason]")
 
 	var/admin_rank = "Player"
 	if (src.holder && src.holder.rank)
