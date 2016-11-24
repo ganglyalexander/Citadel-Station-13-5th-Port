@@ -149,7 +149,7 @@
 			return
 		else
 			registered_name = null
-			usr << "<span class='danger'>You secuessfully reset the lock.</span>"
+			usr << "<span class='danger'>You successfully reset the lock.</span>"
 			src.desc = "The lock appears to be reset"
 			add_fingerprint(usr)
 			return
